@@ -18,15 +18,18 @@ import org.springframework.stereotype.Component;
 public class BussinessPerson implements Person {
 
     @Autowired
-    private Animal animal = null;
+    private Animal cat = null;
+//    private Animal animal = null;
 
     @Override
     public void service() {
-        this.animal.use();
+//        this.animal.use();
+        this.cat.use();
     }
 
     @Override
     public void setAnimal(Animal animal) {
-        this.animal = animal;
+//        this.animal = animal;
+        this.cat = animal;
     }
 }

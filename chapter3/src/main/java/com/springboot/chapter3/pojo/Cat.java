@@ -1,6 +1,7 @@
 package com.springboot.chapter3.pojo;
 
 import com.springboot.chapter3.pojo.definition.Animal;
+import org.springframework.stereotype.Component;
 
 /**
  * @author : GUSHIII
@@ -11,9 +12,10 @@ import com.springboot.chapter3.pojo.definition.Animal;
  * @description : TODO
  * @date : 2022/11/15 20:33
  */
+@Component
 public class Cat implements Animal {
     @Override
     public void use() {
-        System.out.println("猫 [ " + Dog.class.getSimpleName() + " ] 是抓老鼠用的");
+        System.out.println("猫 [ " + Cat.class.getSimpleName() + " ] 是抓老鼠用的");
     }
 }
