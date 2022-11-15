@@ -2,6 +2,7 @@ package com.springboot.chapter3.life;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 /**
  * @author : GUSHIII
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
  * @description : TODO
  * @date : 2022/11/15 22:12
  */
+@Component
 public class BeanPostProcessorExample implements BeanPostProcessor {
 
     @Override

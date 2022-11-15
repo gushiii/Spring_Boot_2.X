@@ -21,7 +21,7 @@ public class IoCTest {
 
 
     public static void main(String[] args) {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
         User1 user1 = ctx.getBean(User1.class);
         System.out.println(user1);
         User2 user2 = ctx.getBean(User2.class);
@@ -33,6 +33,7 @@ public class IoCTest {
         System.out.println("=========================");
         Person person = ctx.getBean(BussinessPerson.class);
         person.service();
+        ctx.close();
     }
 
 }
