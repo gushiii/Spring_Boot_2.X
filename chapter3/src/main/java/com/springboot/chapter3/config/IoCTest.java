@@ -1,6 +1,7 @@
 package com.springboot.chapter3.config;
 
 import com.springboot.chapter3.pojo.BussinessPerson;
+import com.springboot.chapter3.pojo.DataBaseProperties;
 import com.springboot.chapter3.pojo.User1;
 import com.springboot.chapter3.pojo.User3;
 import com.springboot.chapter3.pojo.definition.Person;
