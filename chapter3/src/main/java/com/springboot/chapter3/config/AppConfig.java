@@ -29,14 +29,14 @@ import java.util.Properties;
     excludeFilters = {@ComponentScan.Filter(classes = Service.class)})
 public class AppConfig {
 
-//    @Bean(name = "user")
-//    public User1 initUser () {
-//        User1 user1 = new User1();
-//        user1.setId(1L);
-//        user1.setUserName("user_name_1");
-//        user1.setNote("note_1");
-//        return user1;
-//    }
+    @Bean(name = "user")
+    public User1 initUser () {
+        User1 user1 = new User1();
+        user1.setId(1L);
+        user1.setUserName("user_name_1");
+        user1.setNote("note_1");
+        return user1;
+    }
 
     @Bean(name = "dataSource")
     public DataSource getDataSource () {
