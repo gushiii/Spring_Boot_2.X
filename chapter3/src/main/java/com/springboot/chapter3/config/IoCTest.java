@@ -7,7 +7,6 @@ import com.springboot.chapter3.pojo.definition.Person;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import javax.sql.DataSource;
 
 /**
  * @author : GUSHIII
