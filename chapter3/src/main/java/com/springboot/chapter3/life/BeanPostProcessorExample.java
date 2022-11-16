@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @version : 1.0
  * @projectName : Spring_Boot
  * @package : com.springboot.chapter3.life
- * @className : BeanPostProcessorExampIe
+ * @className : BeanPostProcessorExample
  * @description : TODO
  * @date : 2022/11/15 22:12
  */

@@ -7,21 +7,23 @@ import org.springframework.stereotype.Component;
 /**
  * @author : GUSHIII
  * @version : 1.0
- * @projectName : chapter1
+ * @projectName : Spring_Boot
  * @package : com.springboot.chapter3.pojo
- * @className : User3
+ * @className : BeanName
  * @description : TODO
- * @date : 2022/11/15 17:45
+ * @date : 2022/11/16 14:57
  */
-@Data
 @Component
-public class User3 {
+@Data
+public class BeanName {
 
-    @Value("3")
-    private Long id;
-    @Value("user_name_3")
-    private String userName;
-    @Value("note_3")
-    private String note;
+    @Value("#{'使用 Spring EL 赋值字符串'}")
+    private String str = null;
+
+    @Value("#{9.3E3}")
+    private double d;
+
+    @Value("#{3.14}")
+    private float pi;
 
 }

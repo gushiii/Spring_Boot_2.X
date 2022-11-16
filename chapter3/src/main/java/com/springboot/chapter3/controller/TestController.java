@@ -2,13 +2,11 @@ package com.springboot.chapter3.controller;
 
 import com.springboot.chapter3.config.AppConfig;
 import com.springboot.chapter3.config.User2;
-import com.springboot.chapter3.pojo.BussinessPerson;
-import com.springboot.chapter3.pojo.DataBaseProperties;
-import com.springboot.chapter3.pojo.User1;
-import com.springboot.chapter3.pojo.User3;
+import com.springboot.chapter3.pojo.*;
 import com.springboot.chapter3.pojo.definition.Person;
 import com.springboot.chapter3.scope.pojo.ScopeBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -65,9 +63,12 @@ public class TestController {
         System.out.println("scopeBean1 == scopeBean2 : " + (scopeBean1 == scopeBean2));
 
         System.out.println("<=======================================>");
-
         String[] beanNamesForType = ctx.getBeanNamesForType(DataSource.class);
         System.out.println(Arrays.toString(beanNamesForType));
+
+        System.out.println("<=======================================>");
+        SpringEL springEL = ctx.getBean(SpringEL.class);
+        System.out.println(springEL);
 
     }
 
