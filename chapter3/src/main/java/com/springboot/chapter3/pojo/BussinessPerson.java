@@ -41,7 +41,7 @@ public class BussinessPerson implements Person, BeanNameAware,
     }
 
     @Override
-    @Autowired @Qualifier("dog")
+    @Autowired @Qualifier("squirrel")
     public void setAnimal(Animal animal) {
         System.out.println("延迟依赖注入");
         this.animal = animal;

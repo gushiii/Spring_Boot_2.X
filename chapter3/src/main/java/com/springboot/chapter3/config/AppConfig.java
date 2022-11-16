@@ -30,6 +30,7 @@ import java.util.Properties;
     excludeFilters = {@ComponentScan.Filter(classes = Service.class)},
     lazyInit = true
 )
+@ImportResource(value = {"classpath:spring-other.xml"})
 public class AppConfig {
 
     @Bean(name = "user")
