@@ -51,4 +51,11 @@ public class UserController {
         return user;
     }
 
+    @RequestMapping("/manyAspects")
+    @ResponseBody
+    public String manyAspects () {
+        userService.manyAspects();
+        return "manyAspects";
+    }
+
 }

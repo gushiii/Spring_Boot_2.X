@@ -3,10 +3,13 @@ package com.springboot.chapter4.aspect;
 import com.springboot.chapter4.aspect.validator.UserValidator;
 import com.springboot.chapter4.aspect.validator.impl.UserValidatorImpl;
 import com.springboot.chapter4.invoke.Invocation;
+import com.springboot.chapter4.pojo.User;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 
 /**
  * @author : GUSHIII
@@ -32,6 +35,12 @@ public class MyAspect {
     @Before("printCut()")
     public void before() {
         System.out.println("before ... ");
+    }
+
+    @Before("printCut() && args(user)")
+    public void beforeParam (JoinPoint point, User user) {
+        Object[] args = point.getArgs();
+        System.out.println("before ... " + Arrays.toString(args));
     }
 
     @After("printCut()")
