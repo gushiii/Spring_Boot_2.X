@@ -1,5 +1,7 @@
 package com.springboot.chapter4.aspect;
 
+import com.springboot.chapter4.aspect.validator.UserValidator;
+import com.springboot.chapter4.aspect.validator.impl.UserValidatorImpl;
 import com.springboot.chapter4.invoke.Invocation;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -17,6 +19,12 @@ import java.lang.reflect.InvocationTargetException;
  */
 @Aspect
 public class MyAspect {
+
+    @DeclareParents(
+            value = "com.springboot.chapter4.aspect.service.impl.UserServiceImpl",
+            defaultImpl = UserValidatorImpl.class
+    )
+    public UserValidator userValidator;
 
     @Pointcut("execution(* com.springboot.chapter4.aspect.service.impl.UserServiceImpl.printUser(..))")
     public void printCut () {}

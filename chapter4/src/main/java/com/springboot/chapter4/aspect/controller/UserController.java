@@ -1,6 +1,7 @@
 package com.springboot.chapter4.aspect.controller;
 
 import com.springboot.chapter4.aspect.service.UserService;
+import com.springboot.chapter4.aspect.validator.UserValidator;
 import com.springboot.chapter4.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +33,21 @@ public class UserController {
         user.setUserName(userName);
         user.setNote(note);
         userService.printUser(user);
+        return user;
+    }
+
+    @ResponseBody
+    @RequestMapping("vp")
+    public User validatorAndPrint (Long id, String userName, String note) {
+        User user = new User();
+        user.setId(id);
+        user.setUserName(userName);
+        user.setNote(note);
+
+        UserValidator userValidator = (UserValidator) userService;
+        if (userValidator.validator(user)) {
+            userService.printUser(user);
+        }
         return user;
     }
 
