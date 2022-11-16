@@ -1,6 +1,7 @@
 package com.springboot.chapter4.aspect;
 
 import com.springboot.chapter4.invoke.Invocation;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 
 import java.lang.reflect.InvocationTargetException;
@@ -40,5 +41,10 @@ public class MyAspect {
         System.out.println("afterThrowing ... ");
     }
 
-
+    @Around("printCut()")
+    public void around (ProceedingJoinPoint jp) throws Throwable {
+        System.out.println("around before ..."); //回调 目标对象的原有方法
+        jp.proceed();
+        System.out.println("around after ...");
+    }
 }
