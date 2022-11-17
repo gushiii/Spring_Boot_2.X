@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * @author : GUSHIII
  * @version : 1.0
@@ -28,8 +30,29 @@ public class JpaController {
     @RequestMapping("/getUser")
     @ResponseBody
     public User getUser (Long id) {
-        User user = jpaUserRepository.findById(id).get();
+        User user = jpaUserRepository.getUserById(id);
         return user;
+    }
+
+    @RequestMapping("/findUsers")
+    @ResponseBody
+    public List<User> findUsers (String userName, String note) {
+        List<User> userList = jpaUserRepository.findUsers(userName, note);
+        return userList;
+    }
+
+    @RequestMapping("/findByUserNameLike")
+    @ResponseBody
+    public List<User> findByUserNameLike (String userName) {
+        List<User> userList = jpaUserRepository.findByUserNameLike(userName);
+        return userList;
+    }
+
+    @RequestMapping("/findByUserNameLikeOrNoteLike")
+    @ResponseBody
+    public List<User> findByUserNameLikeOrNoteLike (String userName, String note) {
+        List<User> userList = jpaUserRepository.findByUserNameLikeOrNoteLike(userName, note);
+        return userList;
     }
 
     @RequestMapping("/addUser")
