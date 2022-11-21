@@ -8,7 +8,9 @@ spring:
       max-active: 50
       max-wait: 1000
       initial-size: 5
+      default-transaction-isolation: 2
     driver-class-name: com.mysql.cj.jdbc.Driver
+
 logging:
   level:
     root: debug
@@ -16,6 +18,7 @@ logging:
       springframework: debug
       org:
         mybatis: debug
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.springboot.chapter6.pojo

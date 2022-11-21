@@ -6,6 +6,7 @@ import com.springboot.chapter6.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -24,7 +25,10 @@ public class UserServiceImpl implements UserService {
     UserDao userDao = null;
 
     @Override
-    @Transactional(isolation = Isolation.READ_COMMITTED, timeout = 1)
+    @Transactional(isolation = Isolation.SERIALIZABLE, timeout = 1,
+//            propagation = Propagation.REQUIRED
+            propagation = Propagation.NESTED
+    )
     public int insertUser(User user) {
         return userDao.insertUser(user);
     }
