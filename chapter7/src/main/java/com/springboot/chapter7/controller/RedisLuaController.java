@@ -44,6 +44,8 @@ public class RedisLuaController {
         return map;
     }
 
+    @RequestMapping("/lua2")
+    @ResponseBody
     public Map<String, Object> testLua2 (String key1, String key2, String value1, String value2) {
         String lua = "redis.call('set', KEYS[1], ARGV[1]) \n"
                 + "redis.call('set', KEYS[2], ARGV[2]) \n"
