@@ -29,14 +29,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    @CachePut(value = "redisCache", key = "'redis_user_'+#id")
+    @Cacheable(value = "redisCache", key = "'redis_user_'+#id")
     public User getUser(Long id) {
         return userDao.getUser(id);
     }
 
     @Override
     @Transactional
-    @Cacheable(value = "redisCache", key = "'redis_user_'+#id")
+    @CachePut(value = "redisCache", key = "'redis_user_'+#id")
     public User insertUser(User user) {
         userDao.insertUser(user);
         return user;
